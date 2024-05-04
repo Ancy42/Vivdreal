@@ -62,7 +62,7 @@ class CompaniesController extends Controller
             'company_name' => 'required',
             'email' => 'required',
             'website' => 'required',
-            'company_logo' => 'dimensions:min_width=100,min_height=100'
+            'company_logo' => 'max:1000'
         ]);
         try {
             $data = [
