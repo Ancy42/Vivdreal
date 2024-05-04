@@ -15,10 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
-            $table->integer('company_id')->nullable();
+            $table->unsignedBigInteger('company_id')->nullable();
             $table->string('email_id')->nullable();
             $table->string('phone')->nullable();
             $table->timestamps();
+            $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
         });
     }
 
